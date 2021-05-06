@@ -1,0 +1,32 @@
+Q1:
+
+
+python program:
+
+string = input()
+alphabet=1                        # to check the alphabet sequence wise from B-Y
+count=0
+for i in range(len(string)):
+    if string[i]=='A' and count==0:
+        start_index=i
+        count=1
+    else:
+        if string[i]=='Z' and count==25:        # 25 signifies A-Y alphabets are found
+            end_index=i
+            break
+        if string[i]==chr(65+alphabet) and count>0:
+            count+=1
+            alphabet+=1
+print(end_index-start_index+1)
+
+
+
+Q2:
+
+SQl
+
+
+select stu_id,first_name,last_name,city,DATEDIFF(year,DOB,'2020-01-01') as DOB
+from student where stu_id in (select DISTINCT(stu_id) as stu_id from course where course_name='PHYSICS' OR course_name='MATHS');
+
+        
